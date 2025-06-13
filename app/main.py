@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List
-
+from time import sleep
+import os
 #Force tests
 app = FastAPI()
 
@@ -34,4 +35,12 @@ async def get_books():
 @app.get("/health-check/", response_model=HealthCheckResponse)
 async def healthCheck():
     return HealthCheckResponse(message="AIUTO")
+#Added information
+
+@app.get("/load/", response_model=HealthCheckResponse)
+async def simulate_load():
+    id=os.getenv("HOSTNAME")
+    sleep(15)
+    return id
+
 #Added information
