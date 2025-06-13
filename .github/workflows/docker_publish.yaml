@@ -27,4 +27,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: laurabalbi00/bookstore-api
+        tags: laurabalbi00/bookstore-api 
